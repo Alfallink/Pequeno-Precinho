@@ -1,226 +1,375 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamae & Bebê | Suas fraldas e produtos favoritos</title>
+    <meta name="description" content="Descubra as melhores fraldas e produtos para bebês. Comprar nunca foi tão fácil e seguro com as ofertas da Amazon!">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #ffb6c1;
+            --cor-secundaria: #7ecce6;
+            --cor-fundo: #fff8fa;
+            --cor-botao: #f88379;
+            --cor-letra: #333;
+        }
+        body {
+            background: var(--cor-fundo);
+            color: var(--cor-letra);
+            font-family: 'Baloo 2', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, var(--cor-principal), var(--cor-secundaria));
+            padding: 20px 0 10px 0;
+            text-align: center;
+            border-bottom: 4px solid #fff;
+        }
+        header h1 {
+            font-size: 2.7rem;
+            margin: 0;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 6px #f88379aa;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: var(--cor-letra);
+            background: #fff;
+            padding: 8px 18px;
+            margin: 0 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.12rem;
+            font-weight: bold;
+            box-shadow: 1px 1px 8px #eee;
+            transition: background .2s;
+        }
+        nav a:hover { background: var(--cor-principal); color: #fff; }
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 32px 10% 40px 10%;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=1200&q=80') no-repeat right center;
+            background-size: cover;
+            min-height: 280px;
+        }
+        .banner-text {
+            background: #fff8faee;
+            padding: 30px 38px;
+            border-radius: 25px;
+            box-shadow: 4px 4px 30px #9991;
+            max-width: 410px;
+        }
+        .banner-text h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: var(--cor-principal);
+        }
+        .banner-text p {
+            font-size: 1.15rem;
+        }
+        .produtos {
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+            padding: 0 6vw;
+        }
+        .produtos h3 {
+            color: var(--cor-principal);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .lista-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minClaro! Aqui está um exemplo de site moderno para um afiliado Amazon no nicho infantil, focado em fraldas e produtos para bebês. O site já vem preparado para integrar a API da Amazon (deixe marcado onde inserir a lógica futuramente).
+
+Este exemplo usa HTML5, CSS (inline para facilitar o exemplo) e um pouco de JavaScript para simular a listagem de produtos da API Amazon, que você irá inserir depois. Sinta-se à vontade para adaptar o layout, as cores e conteúdo.
+
+---
+
+```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pequenos Precinhos - Promoções Infantis Amazon</title>
-  <meta name="description" content="Economia que cresce com seu bebê. As melhores ofertas infantis da Amazon com atualizações diárias.">
-  <style>
-    /* Fonte divertida e moderna */
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Mundo do Bebê – Produtos Essenciais para seu Pequeno 👶</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fbff; margin: 0; padding: 0; }
+        header { background: #7ed6df; color: #fff; padding: 30px 0; text-align: center; }
+        h1 { margin: 0 0 10px 0; font-size: 2.4em; }
+        nav { margin-bottom: 20px; }
+        nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: 500; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .products { display: flex; flex-wrap: wrap; gap: 24px; }
+        .product {
+            background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(140,198,243,.12);
+            padding: 16px; width: 295px; display: flex; flex-direction: column; align-items: center;
+            transition: transform .1s; text-align: center;
+        }
+        .product:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 5px 15px #aedaf7; }
+        .product img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 18px; }
+        .product-title { font-size: 1.15em; margin: 8px 0; min-height: 38px; font-weight: 500;}
+        .product-price { color: #009688; font-weight: bold; font-size: 1.1em; margin-bottom: 12px;}
+        .buy-btn {
+            background: #009688; color: #fff; border: none; padding: 10px 28px; border-radius: 30px;
+            font-size: 1.1em; cursor: pointerClaro! Aqui está um esqueleto pronto para você criar um site perfeito para vender produtos de bebês (fraldas e outros) como associado da Amazon. O site é feito em HTML, CSS e traz sugestões de onde inserir a integração com a API da Amazon.
 
-    body {
-      font-family: 'Baloo 2', cursive;
-      background: #fefefe;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
+Sinta-se à vontade para personalizar, inserir seu conteúdo e adicionar a integração da Amazon onde indicado. Este exemplo é responsivo, alegre e bem estruturado — ideal para o nicho infantil! 🍼👶
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #6EC1E4, #FFD166);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-    /* Logo placeholder */
-    .logo {
-      display: block;
-      margin: 0 auto 20px;
-      width: 150px;
-      height: auto;
-    }
-    header h1 {
-      font-size: 38px;
-      margin: 0;
-    }
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    /* Container principal */
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Seções */
-    section {
-      margin-bottom: 70px;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #444;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-    }
-    section h2::after {
-      content: '';
-      position: absolute;
-      width: 70%;
-      height: 4px;
-      background: #FFD166;
-      left: 15%;
-      bottom: 0;
-      border-radius: 2px;
-    }
-
-    /* Card dos produtos */
-    .product-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    }
-
-    /* Botões */
-    .btn {
-      display: inline-block;
-      padding: 14px 30px;
-      margin-top: 20px;
-      background: #6EC1E4;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.3s;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .btn:hover {
-      background: #FFD166;
-      color: #333;
-      transform: scale(1.05);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
-
-    /* Footer */
-    footer {
-      background: #6EC1E4;
-      color: #fff;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-      margin-top: 60px;
-      border-top-left-radius: 40px;
-      border-top-right-radius: 40px;
-    }
-  </style>
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Bebê | Loja de Fraldas e Acessórios</title>
+    <meta name="description" content="Encontre as melhores fraldas e produtos para bebês com preços incríveis. Somos associados Amazon!">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:700|Roboto:400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f6fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #9ad0ec 0%, #ffe3e3 100%);
+            padding: 30px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px #eef3f8;
+        }
+        header h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 2.8em;
+            color: #ff6f61;
+            margin-bottom: 0;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #4f4f4f;
+        }
+        nav {
+            background: #fff;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 1px 6px #eee;
+        }
+        nav a {
+            color: #ff6f61;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1100px;
+            margin: 32px auto;
+            padding: 0 20px;
+        }
+        .intro {
+            text-align: center;
+            margin: 36px 0 50px 0;
+        }
+        .intro img {
+            width: 80px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 32px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px #e8eaf6;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.15s;
+        }
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 24px #bee3f8;
+        }
+        .product-card img {
+            max-width: 120px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        .product-card .name {
+            font-weight: bold;
+            font-size: 1em;
+            color: #30698c;
+            margin: 10px 0;
+        }
+        .product-card .price {
+            color: #ff6f61;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+        }
+        .product-card .buy-btn {
+            background: #ff6f61;
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: auto;
+        }
+        .product-card .buy-btn:hover {
+            background: #ec5a55;
+        }
+        footer {
+            text-align: center;
+            background: #eee;
+            padding: 24px 0 12px 0;
+            margin-top: 70px;
+            color: #929292;
+            font-size: 0.95em;
+        }
+        @media (max-width: 700px) {
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 { font-size: 2em; }
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <!-- Espaço reservado para a sua logo -->
-    <img src="sua-logo.png" alt="Logo Pequenos Precinhos" class="logo">
+    <header>
+        <h1>Super Bebê 🍼</h1>
+        <p>As melhores ofertas em fraldas e produtos para o seu pequeno! <br>
+            <span style="font-size:0.9em;">Somos parceiros e afiliados Amazon 😊</span>
+        </p>
+    </header>
+    <nav>
+        <a href="#fraldas">Fraldas</a>
+        <a href="#cuidados">Cuidados</a>
+        <a href="#acessorios">Acessórios</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
 
-    <h1>Pequenos Precinhos</h1>
-    <p>Economia que cresce com seu bebê</p>
-  </header>
+    <main>
+        <section class="intro">
+            <img src="https://cdn-icons-png.flaticon.com/512/1998/1998663.png" alt="icone bebê">
+            <h2>Bem-vindo à Super Bebê!</h2>
+            <p>
+                Aqui você encontra tudo para o seu bebê crescer feliz, saudável e confortável 👶.<br>
+                Selecionamos as melhores fraldas, lenços, cuidados e acessórios direto da Amazon, com toda segurança e praticidade para você!
+            </p>
+        </section>
 
-  <main>
-    <!-- ROUPAS -->
-    <section>
-      <h2>👕 Roupas Infantis em Oferta</h2>
-      <div class="product-card">
-        <script type="text/javascript">
-          amzn_assoc_ad_type = "responsive_search_widget";
-          amzn_assoc_tracking_id = "alfalink-20";
-          amzn_assoc_marketplace = "amazon";
-          amzn_assoc_region = "BR";
-          amzn_assoc_search_type = "search_widget";
-          amzn_assoc_width = "100%";
-          amzn_assoc_height = 500;
-          amzn_assoc_default_search_key = "promoções roupas infantis";
-          amzn_assoc_theme = "light";
-          amzn_assoc_bg_color = "FFFFFF";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=BR"></script>
-      </div>
-      <a href="https://www.amazon.com.br/s?k=roupas+infantis&tag=alfalink-20" class="btn">👕 Ver mais na Amazon</a>
-    </section>
+        <section id="fraldas">
+            <h2>Fraldas em Oferta</h2>
+            <div class="products" id="products-fraldas">
+                <!-- Aqui os produtos aparecerão via API da Amazon. Exemplo estático abaixo -->
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/71A6nCfPRvL._AC_SX425_.jpg" alt="Fralda Pampers">
+                    <div class="name">Fralda Pampers Confort Sec, XXG - 60 Unidades</div>
+                    <div class="price">R$ 79,90</div>
+                    <a class="buy-btn" target="_blank" rel="nofollow" href="https://www.amazon.com.br/dp/B07DNWRNCH/?tag=SEU-CODIGO-AQUI">Ver na Amazon</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/919yevGPrXL._AC_SX425_.jpg" alt="Fralda Huggies Supreme Care">
+                    <div class="name">Fralda Huggies Supreme Care Mega - 48 Unidades</div>
+                    <div class="price">R$ 71,50</div>
+                    <a class="buy-btn" target="_blank" rel="nofollow" href="https://www.amazon.com.br/dp/B08L68PDYL/?tag=SEU-CODIGO-AQUI">Ver na Amazon</a>
+                </div>
+                <!-- API da Amazon: Inserir produtos dinamicamente aqui -->
+            </div>
+        </section>
 
-    <!-- BRINQUEDOS -->
-    <section>
-      <h2>🧸 Brinquedos em Promoção</h2>
-      <div class="product-card">
-        <script type="text/javascript">
-          amzn_assoc_ad_type = "responsive_search_widget";
-          amzn_assoc_tracking_id = "alfalink-20";
-          amzn_assoc_marketplace = "amazon";
-          amzn_assoc_region = "BR";
-          amzn_assoc_search_type = "search_widget";
-          amzn_assoc_width = "100%";
-          amzn_assoc_height = 500;
-          amzn_assoc_default_search_key = "promoções brinquedos infantis";
-          amzn_assoc_theme = "light";
-          amzn_assoc_bg_color = "FFFFFF";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=BR"></script>
-      </div>
-      <a href="https://www.amazon.com.br/s?k=brinquedos+infantis&tag=alfalink-20" class="btn">🧸 Ver mais na Amazon</a>
-    </section>
+        <section id="cuidados" style="margin-top:60px;">
+            <h2>Cuidados & Higiene</h2>
+            <div class="products" id="products-cuidados">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61hM8dxwGLL._AC_SX425_.jpg" alt="Lenço Umedecido Johnson's">
+                    <div class="name">Lenço Umedecido Johnson's Baby - 96 Unidades</div>
+                    <div class="price">R$ 18,90</div>
+                    <a class="buy-btn" href="https://www.amazon.com.br/dp/B08FPLVJSF/?tag=SEU-CODIGO-AQUI" target="_blank" rel="nofollow">Ver na Amazon</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61t9aBRcWjL._AC_SX425_.jpg" alt="Creme Assaduras Bepantol Baby">
+                    <div class="name">Bepantol Baby Creme para Assaduras 60g</div>
+                    <div class="price">R$ 19,25</div>
+                    <a class="buy-btn" href="https://www.amazon.com.br/dp/B06XGJDF3X/?tag=SEU-CODIGO-AQUI" target="_blank" rel="nofollow">Ver na Amazon</a>
+                </div>
+                <!-- Produtos dinâmicos via API Amazon aqui -->
+            </div>
+        </section>
 
-    <!-- FRALDAS -->
-    <section>
-      <h2>🍼 Fraldas e Cuidados para Bebês</h2>
-      <div class="product-card">
-        <script type="text/javascript">
-          amzn_assoc_ad_type = "responsive_search_widget";
-          amzn_assoc_tracking_id = "alfalink-20";
-          amzn_assoc_marketplace = "amazon";
-          amzn_assoc_region = "BR";
-          amzn_assoc_search_type = "search_widget";
-          amzn_assoc_width = "100%";
-          amzn_assoc_height = 500;
-          amzn_assoc_default_search_key = "promoções fraldas cuidados bebê";
-          amzn_assoc_theme = "light";
-          amzn_assoc_bg_color = "FFFFFF";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=BR"></script>
-      </div>
-      <a href="https://www.amazon.com.br/s?k=fraldas&tag=alfalink-20" class="btn">🍼 Ver mais na Amazon</a>
-    </section>
+        <section id="acessorios" style="margin-top:60px;">
+            <h2>Acessórios Úteis</h2>
+            <div class="products" id="products-acessorios">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/71Qn2vQ3anL._AC_SY450_.jpg" alt="Kit Mamadeira Avent">
+                    <div class="name">Kit Mamadeira Philips Avent Classic+ - 3 Unidades</div>
+                    <div class="price">R$ 109,00</div>
+                    <a class="buy-btn" href="https://www.amazon.com.br/dp/B01B1E6EG4/?tag=SEU-CODIGO-AQUI" target="_blank" rel="nofollow">Ver na Amazon</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61t6suHxuTL._AC_SY445_.jpg" alt="Chupeta MAM Perfect Night">
+                    <div class="name">Chupeta MAM Perfect Night 6m+</div>
+                    <div class="price">R$ 44,90</div>
+                    <a class="buy-btn" href="https://www.amazon.com.br/dp/B07MZKNM4B/?tag=SEU-CODIGO-AQUI" target="_blank" rel="nofollow">Ver na Amazon</a>
+                </div>
+                <!-- Produtos dinâmicos via API Amazon aqui -->
+            </div>
+        </section>
 
-    <!-- ACESSÓRIOS -->
-    <section>
-      <h2>🎒 Acessórios e Utilidades Infantis</h2>
-      <div class="product-card">
-        <script type="text/javascript">
-          amzn_assoc_ad_type = "responsive_search_widget";
-          amzn_assoc_tracking_id = "alfalink-20";
-          amzn_assoc_marketplace = "amazon";
-          amzn_assoc_region = "BR";
-          amzn_assoc_search_type = "search_widget";
-          amzn_assoc_width = "100%";
-          amzn_assoc_height = 500;
-          amzn_assoc_default_search_key = "promoções acessórios infantis";
-          amzn_assoc_theme = "light";
-          amzn_assoc_bg_color = "FFFFFF";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=BR"></script>
-      </div>
-      <a href="https://www.amazon.com.br/s?k=acessórios+infantis&tag=alfalink-20" class="btn">🎒 Ver mais na Amazon</a>
-    </section>
-  </main>
+        <section id="sobre" style="margin:60px 0 20px 0;text-align: center;">
+            <h2>Sobre o Super Bebê</h2>
+            <p>
+                Nós somos apaixonados por trazer praticidade e economia para a vida dos papais e mamães de todo o Brasil 🙌.<br>
+                Ao comprar pelos nossos links você ajuda a manter este projeto no ar, sem pagar nada a mais e com todo o suporte da Amazon. <br><br>
+                <b>Boas compras! 💙</b>
+            </p>
+        </section>
+    </main>
 
-  <footer>
-    <p>© 2025 - Pequenos Precinhos | Parceiro Amazon (alfalink-20)</p>
-  </footer>
+    <footer>
+        <div>
+            <small>&copy; 2024 Super Bebê - Site Associado Amazon. Imagens e preços meramente ilustrativos. Todas as ofertas são da Amazon.</small>
+        </div>
+        <div style="margin-top:8px; font-size:0.88em;">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Contato</a>
+        </div>
+    </footer>
 
+    <!-- Aqui você pode inserir o código JavaScript para consumir a API da Amazon Associates e gerar os produtos dinamicamente nos blocos acima -->
+    <!-- Por questões de segurança, a API geralmente é utilizada do backend/server, não diretamente no front-end HTML -->
+    <script>
+        // Exemplo: Carregar produtos da API da Amazon e preencher os elementos .products
+        // Você pode usar AJAX para buscar do seu servidor que se comunica com a Amazon Product Advertising API
+        // Por exemplo:
+        /*
+        fetch('/api/produtos?categoria=fraldas')
+          .then(res => res.json())
+          .then(data => {
+              // Preencha #products-fraldas com base em data
+          });
+        */
+    </script>
 </body>
 </html>
