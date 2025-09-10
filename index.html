@@ -1,163 +1,1173 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Super Bebê | Fraldas, Cuidados & Acessórios - Associado Amazon</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Compre fraldas, lenços, cuidados e acessórios para bebês com segurança e entrega rápida. Associado Amazon alfalink-20.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
-<style>
-:root {
- --azul-bebe:#90caf9; --rosa-bebe:#f48fb1; --amarelo:#fffde7; --roxo:#ab47bc;
- --azul-escuro:#356879; --branco:#fff; --sombra:0 4px 24px rgba(51,100,133,0.1);
- --radius:18px; --transition:.2s ease-in-out;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter', sans-serif;background:linear-gradient(120deg,var(--azul-bebe),var(--amarelo),var(--rosa-bebe)) fixed;color:#2b3741;}
-header{background:var(--branco);border-bottom:3px solid var(--azul-bebe);box-shadow:var(--sombra);position:sticky;top:0;z-index:100}
-.top-bar{display:flex;align-items:center;justify-content:center;gap:15px;padding:18px}
-.logo-icone{background:linear-gradient(100deg,var(--rosa-bebe),var(--azul-bebe));border-radius:50%;padding:10px;font-size:2em;color:var(--roxo);box-shadow:0 2px 12px #e1bee7}
-.site-title{font-family:'Bebas Neue',cursive;font-size:2.4em;color:var(--azul-escuro);letter-spacing:.03em}
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:linear-gradient(90deg,#f5f5f5 70%,#f8bbd0)}
-nav a{color:var(--roxo);text-decoration:none;font-weight:bold;padding:10px 15px;border-radius:var(--radius);transition:background var(--transition)}
-nav a:hover{background:#ede7f6;color:var(--azul-escuro);box-shadow:0 3px 15px #fce4ec99}
-.banner-amazon{text-align:center;margin:18px 0}
-main{max-width:1100px;margin:auto;padding:20px}
-.section-title{font-family:'Bebas Neue',cursive;font-size:2em;color:var(--azul-escuro);margin-bottom:10px;text-align:center}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px}
-.card{background:var(--branco);border-radius:var(--radius);box-shadow:var(--sombra);padding:15px;text-align:center;transition:transform .2s}
-.card:hover{transform:translateY(-5px)}
-.card img{width:120px;height:120px;object-fit:contain;border-radius:8px;margin-bottom:8px}
-.price{font-weight:bold;color:var(--azul-escuro);margin:8px 0}
-.btn{display:inline-block;background:linear-gradient(90deg,var(--rosa-bebe),var(--azul-bebe));color:white;padding:8px 16px;border-radius:20px;text-decoration:none;font-weight:bold;transition:opacity .2s}
-.btn:hover{opacity:0.85}
-footer{text-align:center;padding:20px;background:#f5f5f5;margin-top:30px;font-size:0.9em;color:#555}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebê Brasil - Os Melhores Produtos para Bebês da Amazon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff9bb5 0%, #87ceeb 50%, #ff9a9e 100%);
+        }
+        
+        .baby-gradient {
+            background: linear-gradient(45deg, #ff9bb5, #87ceeb, #ff9a9e, #b6e5ff);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Enhanced Card Hover Effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+            z-index: 1;
+        }
+        
+        .card-hover:hover::before {
+            left: 100%;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 151, 57, 0.3);
+        }
+        
+        /* Micro Animations */
+        .micro-bounce {
+            animation: microBounce 0.6s ease-in-out;
+        }
+        
+        @keyframes microBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .wiggle {
+            animation: wiggle 0.5s ease-in-out;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+        }
+        
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #009739;
+            animation: confetti-fall 3s linear forwards;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+        }
+        
+        @keyframes loading {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Image Zoom Effect */
+        .image-zoom {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-zoom img {
+            transition: transform 0.3s ease;
+        }
+        
+        .image-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Pulse Animation Enhanced */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+            position: relative;
+        }
+        
+        .pulse-animation::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+            opacity: 0;
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        /* Carousel Touch Support */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+            touch-action: pan-y;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .card-hover:hover {
+                transform: translateY(-8px) scale(1.01);
+            }
+            
+            .carousel-track {
+                transition: transform 0.3s ease;
+            }
+            
+            .hero-text {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Floating Elements */
+        .floating-badge {
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-8px) rotate(1deg); }
+            66% { transform: translateY(-4px) rotate(-1deg); }
+        }
+        
+        /* Category Dynamic Colors */
+        .category-feeding { 
+            background: linear-gradient(135deg, #ff9bb5, #87ceeb);
+            transition: all 0.3s ease;
+        }
+        .category-clothing { 
+            background: linear-gradient(135deg, #87ceeb, #ff9a9e);
+            transition: all 0.3s ease;
+        }
+        .category-toys { 
+            background: linear-gradient(135deg, #ff9bb5, #b6e5ff);
+            transition: all 0.3s ease;
+        }
+        .category-care { 
+            background: linear-gradient(135deg, #b6e5ff, #ff9bb5);
+            transition: all 0.3s ease;
+        }
+        .category-furniture { 
+            background: linear-gradient(135deg, #87ceeb, #ff9a9e);
+            transition: all 0.3s ease;
+        }
+        .category-safety { 
+            background: linear-gradient(135deg, #ff9a9e, #87ceeb);
+            transition: all 0.3s ease;
+        }
+        
+        /* Lazy Loading Fade In */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Heart Animation */
+        .heart-animation {
+            animation: heartBeat 1s ease-in-out;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1.2); color: #009739; }
+            75% { transform: scale(1.1); }
+        }
+        
+        /* Button Ripple Effect */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .ripple:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            position: relative;
+        }
+        
+        .gallery-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+        
+        .gallery-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        /* Shimmer Effect Enhanced */
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="logo-container">
+                        <svg width="50" height="50" viewBox="0 0 100 100" class="wiggle">
+                            <!-- Background circle with gradient -->
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff9bb5;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#87ceeb;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ff9a9e;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff69b4;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#87ceeb;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Main circle -->
+                            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="white" stroke-width="3"/>
+                            
+                            <!-- Baby face -->
+                            <circle cx="50" cy="45" r="25" fill="white" opacity="0.9"/>
+                            
+                            <!-- Eyes -->
+                            <circle cx="42" cy="40" r="3" fill="#333"/>
+                            <circle cx="58" cy="40" r="3" fill="#333"/>
+                            <circle cx="43" cy="39" r="1" fill="white"/>
+                            <circle cx="59" cy="39" r="1" fill="white"/>
+                            
+                            <!-- Nose -->
+                            <circle cx="50" cy="47" r="1.5" fill="#ffb6c1"/>
+                            
+                            <!-- Smile -->
+                            <path d="M 42 52 Q 50 58 58 52" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Cheeks -->
+                            <circle cx="35" cy="48" r="4" fill="#ffb6c1" opacity="0.6"/>
+                            <circle cx="65" cy="48" r="4" fill="#ffb6c1" opacity="0.6"/>
+                            
+                            <!-- Hair/hat -->
+                            <path d="M 25 35 Q 50 15 75 35 Q 70 25 50 25 Q 30 25 25 35" fill="url(#heartGradient)"/>
+                            
+                            <!-- Heart decoration -->
+                            <path d="M 45 25 C 45 22, 48 20, 50 23 C 52 20, 55 22, 55 25 C 55 28, 50 32, 50 32 C 50 32, 45 28, 45 25 Z" fill="#ff69b4"/>
+                            
+                            <!-- Brazilian flag colors accent -->
+                            <rect x="20" y="75" width="8" height="5" fill="#009739" rx="2"/>
+                            <rect x="30" y="75" width="8" height="5" fill="#ffd700" rx="2"/>
+                            <rect x="40" y="75" width="8" height="5" fill="#002776" rx="2"/>
+                            
+                            <!-- Stars decoration -->
+                            <text x="70" y="82" font-family="Arial" font-size="8" fill="white">⭐</text>
+                            <text x="78" y="78" font-family="Arial" font-size="6" fill="white">✨</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-400 via-blue-400 to-pink-300 bg-clip-text text-transparent">
+                            Bebê Brasil
+                        </h1>
+                        <p class="text-xs text-white opacity-80 -mt-1">💝 Com amor brasileiro</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#produtos" class="hover:text-yellow-200 transition-colors">Produtos</a>
+                    <a href="#ofertas" class="hover:text-yellow-200 transition-colors">Ofertas</a>
+                    <a href="#categorias" class="hover:text-yellow-200 transition-colors">Categorias</a>
+                </nav>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm">🍼 Ofertas Especiais para Bebês Brasileiros</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <div class="top-bar">
-    <div class="logo-icone">🍼</div>
-    <div>
-      <div class="site-title">Super Bebê</div>
-      <div class="subtitle">Fraldas, Cuidados & Acessórios</div>
-    </div>
-  </div>
-  <nav>
-    <a href="#fraldas">Fraldas</a>
-    <a href="#higiene">Higiene</a>
-    <a href="#acessorios">Acessórios</a>
-    <a href="#roupinhas">Roupinhas</a>
-    <a href="#brinquedos">Brinquedos</a>
-    <a href="#material-escolar">Material Escolar</a>
-  </nav>
-</header>
+    <!-- Hero Section -->
+    <section class="baby-gradient text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-10 left-10 text-6xl animate-bounce">🧸</div>
+            <div class="absolute top-20 right-20 text-4xl animate-pulse">🍼</div>
+            <div class="absolute bottom-20 left-20 text-5xl animate-bounce" style="animation-delay: 1s;">🎈</div>
+            <div class="absolute bottom-10 right-10 text-4xl animate-pulse" style="animation-delay: 2s;">⭐</div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 hero-text">Bebê Brasil - Tudo para o seu Pequeno</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Os melhores produtos infantis selecionados com carinho brasileiro. Segurança, qualidade e preços especiais para o seu pequeno!</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <button onclick="scrollToProducts()" class="ripple bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                    🛍️ Ver Produtos <i class="fas fa-arrow-down ml-2"></i>
+                </button>
+                <button class="ripple border-2 border-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full font-semibold text-lg transition-all">
+                    🎁 Ofertas Especiais
+                </button>
+            </div>
+        </div>
+    </section>
 
-<!-- Banner Amazon -->
-<div class="banner-amazon">
-  <iframe src="//rcm-fe.amazon-adsystem.com/e/cm?o=15&p=48&l=ur1&category=baby&banner=1QZFKG9H4TGRZ0NAMG82&f=ifr&linkID=abc&tag=alfalink-20&tracking_id=alfalink-20" width="728" height="90" scrolling="no" style="border:none;" frameborder="0"></iframe>
-</div>
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="card-hover p-6 category-feeding rounded-2xl fade-in">
+                    <div class="text-5xl mb-3">👶</div>
+                    <div class="text-4xl font-bold text-white mb-2" id="stat1">0</div>
+                    <div class="text-white font-semibold">Produtos para Bebês</div>
+                </div>
+                <div class="card-hover p-6 category-clothing rounded-2xl fade-in">
+                    <div class="text-5xl mb-3">👨‍👩‍👧‍👦</div>
+                    <div class="text-4xl font-bold text-white mb-2" id="stat2">0</div>
+                    <div class="text-white font-semibold">Famílias Brasileiras</div>
+                </div>
+                <div class="card-hover p-6 category-toys rounded-2xl fade-in">
+                    <div class="text-5xl mb-3">🎁</div>
+                    <div class="text-4xl font-bold text-white mb-2" id="stat3">0</div>
+                    <div class="text-white font-semibold">Ofertas Especiais</div>
+                </div>
+                <div class="card-hover p-6 baby-gradient rounded-2xl fade-in">
+                    <div class="text-5xl mb-3">💝</div>
+                    <div class="text-4xl font-bold text-white mb-2" id="stat4">0</div>
+                    <div class="text-white font-semibold">Economia Média</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<main>
-  <!-- Fraldas -->
-  <section id="fraldas">
-    <h2 class="section-title">🛍️ Fraldas em Promoção</h2>
-    <div class="products" id="produtos-fraldas"></div>
-  </section>
-  
-  <!-- Higiene -->
-  <section id="higiene">
-    <h2 class="section-title">🧼 Higiene & Cuidados</h2>
-    <div class="products" id="produtos-higiene"></div>
-  </section>
+    <!-- Featured Products Carousel -->
+    <section id="produtos" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Produtos em Destaque</h3>
+                <p class="text-xl text-gray-600">Os mais vendidos e bem avaliados da Amazon Brasil</p>
+            </div>
+            
+            <div class="carousel-container relative" id="carouselContainer">
+                <div class="carousel-track" id="carousel">
+                    <!-- Products will be loaded here -->
+                </div>
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-3 shadow-lg z-10 ripple">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-3 shadow-lg z-10 ripple">
+                    <i class="fas fa-chevron-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <!-- Acessórios -->
-  <section id="acessorios">
-    <h2 class="section-title">🍼 Acessórios Essenciais</h2>
-    <div class="products" id="produtos-acessorios"></div>
-  </section>
+    <!-- Categories Section -->
+    <section id="categorias" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-12">Categorias Populares</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="category-card category-feeding text-center p-6 text-white rounded-xl card-hover cursor-pointer" onclick="filterProducts('feeding')">
+                    <div class="text-4xl mb-3">🍼</div>
+                    <div class="font-semibold">Alimentação</div>
+                </div>
+                <div class="category-card category-clothing text-center p-6 text-white rounded-xl card-hover cursor-pointer" onclick="filterProducts('clothing')">
+                    <div class="text-4xl mb-3">👕</div>
+                    <div class="font-semibold">Roupinhas</div>
+                </div>
+                <div class="category-card category-toys text-center p-6 text-white rounded-xl card-hover cursor-pointer" onclick="filterProducts('toys')">
+                    <div class="text-4xl mb-3">🧸</div>
+                    <div class="font-semibold">Brinquedos</div>
+                </div>
+                <div class="category-card category-care text-center p-6 text-white rounded-xl card-hover cursor-pointer" onclick="filterProducts('care')">
+                    <div class="text-4xl mb-3">🛁</div>
+                    <div class="font-semibold">Higiene</div>
+                </div>
+                <div class="category-card category-furniture text-center p-6 text-white rounded-xl card-hover cursor-pointer" onclick="filterProducts('furniture')">
+                    <div class="text-4xl mb-3">🛏️</div>
+                    <div class="font-semibold">Móveis</div>
+                </div>
+                <div class="category-card category-safety text-center p-6 text-white rounded-xl card-hover cursor-pointer" onclick="filterProducts('safety')">
+                    <div class="text-4xl mb-3">🛡️</div>
+                    <div class="font-semibold">Segurança</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Roupinhas -->
-  <section id="roupinhas">
-    <h2 class="section-title">👕 Roupinhas</h2>
-    <div class="products" id="produtos-roupinhas"></div>
-  </section>
+    <!-- Products Grid -->
+    <section id="ofertas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
+                <h3 class="text-3xl font-bold text-gray-800">Todos os Produtos</h3>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                    <select id="sortSelect" class="px-4 py-2 border rounded-lg" onchange="sortProducts()">
+                        <option value="relevance">Mais Relevantes</option>
+                        <option value="price-low">Menor Preço</option>
+                        <option value="price-high">Maior Preço</option>
+                        <option value="rating">Melhor Avaliação</option>
+                    </select>
+                    <button onclick="loadMoreProducts()" class="ripple bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors">
+                        Carregar Mais
+                    </button>
+                </div>
+            </div>
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Brinquedos -->
-  <section id="brinquedos">
-    <h2 class="section-title">🧸 Brinquedos</h2>
-    <div class="products" id="produtos-brinquedos"></div>
-  </section>
+    <!-- Newsletter Section -->
+    <section class="py-16 baby-gradient text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-5 left-5 text-4xl animate-bounce">🎈</div>
+            <div class="absolute top-10 right-10 text-3xl animate-pulse">🌟</div>
+            <div class="absolute bottom-10 left-10 text-4xl animate-bounce" style="animation-delay: 1s;">🧸</div>
+            <div class="absolute bottom-5 right-5 text-3xl animate-pulse" style="animation-delay: 2s;">💝</div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h3 class="text-3xl font-bold mb-4">Receba Ofertas Especiais para Bebês Brasileiros</h3>
+            <p class="text-xl mb-8">Cadastre-se e seja o primeiro a saber sobre promoções exclusivas para o seu pequeno!</p>
+            <div class="max-w-md mx-auto flex flex-col md:flex-row">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-1 px-4 py-3 rounded-t-lg md:rounded-l-lg md:rounded-t-none text-gray-800">
+                <button class="ripple bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-b-lg md:rounded-r-lg md:rounded-b-none font-semibold transition-colors">
+                    💌 Cadastrar
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <!-- Material Escolar -->
-  <section id="material-escolar">
-    <h2 class="section-title">✏️ Material Escolar</h2>
-    <div class="products" id="produtos-material"></div>
-  </section>
-</main>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">👶 Bebê Brasil</h4>
+                    <p class="text-gray-400">Os melhores produtos para bebês da Amazon Brasil com os melhores preços. Segurança e qualidade para o seu pequeno brasileiro.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-300 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#" class="hover:text-green-300 transition-colors">Contato</a></li>
+                        <li><a href="#" class="hover:text-green-300 transition-colors">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categorias</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-300 transition-colors">🍼 Alimentação</a></li>
+                        <li><a href="#" class="hover:text-green-300 transition-colors">👕 Roupinhas</a></li>
+                        <li><a href="#" class="hover:text-green-300 transition-colors">🧸 Brinquedos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-blue-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-blue-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-green-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Bebê Brasil. Todos os direitos reservados. Participante do Programa de Associados da Amazon. 👶💕</p>
+            </div>
+        </div>
+    </footer>
 
-<footer>
-  © 2024 Super Bebê — Participante do Programa de Associados Amazon Brasil.<br>
-  Imagens e preços obtidos via API e atualizados automaticamente.
-</footer>
+    <script>
+        // Amazon Affiliate Tag
+        const AFFILIATE_TAG = 'Alfalink-20';
+        
+        // Sample baby products data with multiple images
+        const products = [
+            {
+                id: 1,
+                title: "Mamadeira Anticólica Philips Avent 260ml",
+                price: 45.90,
+                originalPrice: 65.90,
+                rating: 4.8,
+                reviews: 8420,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23ffeef0'/%3E%3Crect x='130' y='80' width='40' height='140' rx='20' fill='%23fff' stroke='%23ff9bb5'/%3E%3Ccircle cx='150' cy='70' r='15' fill='%23ff9bb5'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EMamadeira Avent%3C/text%3E%3C/svg%3E",
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fff0f5'/%3E%3Crect x='130' y='80' width='40' height='140' rx='20' fill='%23ffb6c1' stroke='%23ff69b4'/%3E%3Ccircle cx='150' cy='70' r='15' fill='%23ff69b4'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EMamadeira Rosa%3C/text%3E%3C/svg%3E"
+                ],
+                category: "feeding",
+                asin: "B07XQVPQR1"
+            },
+            {
+                id: 2,
+                title: "Body Bebê Manga Longa Kit 5 Peças",
+                price: 89.90,
+                originalPrice: 129.90,
+                rating: 4.7,
+                reviews: 5930,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23e6f3ff'/%3E%3Crect x='110' y='100' width='80' height='100' rx='10' fill='%23a8d8ff'/%3E%3Ccircle cx='130' cy='120' r='5' fill='%23fff'/%3E%3Ccircle cx='170' cy='120' r='5' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EBody Bebê%3C/text%3E%3C/svg%3E",
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23ffe6f0'/%3E%3Crect x='110' y='100' width='80' height='100' rx='10' fill='%23ffb6c1'/%3E%3Ccircle cx='130' cy='120' r='5' fill='%23fff'/%3E%3Ccircle cx='170' cy='120' r='5' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EBody Rosa%3C/text%3E%3C/svg%3E"
+                ],
+                category: "clothing",
+                asin: "B08MQZXN2Y"
+            },
+            {
+                id: 3,
+                title: "Ursinho de Pelúcia Musical Fisher-Price",
+                price: 129.90,
+                originalPrice: 179.90,
+                rating: 4.9,
+                reviews: 12450,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fff5e6'/%3E%3Ccircle cx='150' cy='140' r='50' fill='%23d4a574'/%3E%3Ccircle cx='135' cy='125' r='8' fill='%23333'/%3E%3Ccircle cx='165' cy='125' r='8' fill='%23333'/%3E%3Ccircle cx='150' cy='145' r='5' fill='%23333'/%3E%3Ccircle cx='120' cy='110' r='15' fill='%23d4a574'/%3E%3Ccircle cx='180' cy='110' r='15' fill='%23d4a574'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EUrsinho Musical%3C/text%3E%3C/svg%3E"
+                ],
+                category: "toys",
+                asin: "B08KTZ8250"
+            },
+            {
+                id: 4,
+                title: "Shampoo Johnson's Baby Cabelos Cacheados",
+                price: 18.90,
+                originalPrice: 24.90,
+                rating: 4.6,
+                reviews: 7670,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0fff0'/%3E%3Crect x='120' y='80' width='60' height='120' rx='10' fill='%23a8e6a8'/%3E%3Crect x='125' y='85' width='50' height='20' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EShampoo Johnson%3C/text%3E%3C/svg%3E"
+                ],
+                category: "care",
+                asin: "B0BDHWDR13"
+            },
+            {
+                id: 5,
+                title: "Berço Portátil com Mosquiteiro",
+                price: 299.90,
+                originalPrice: 399.90,
+                rating: 4.5,
+                reviews: 3240,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fff0f5'/%3E%3Crect x='80' y='140' width='140' height='80' rx='10' fill='%23ffb6c1' stroke='%23ff69b4'/%3E%3Crect x='90' y='150' width='120' height='60' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EBerço Portátil%3C/text%3E%3C/svg%3E"
+                ],
+                category: "furniture",
+                asin: "B07QBQZPX5"
+            },
+            {
+                id: 6,
+                title: "Protetor de Tomada Kit 20 Peças",
+                price: 25.90,
+                originalPrice: 39.90,
+                rating: 4.4,
+                reviews: 4180,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fffacd'/%3E%3Crect x='120' y='120' width='60' height='60' rx='10' fill='%23ffd700'/%3E%3Ccircle cx='140' cy='140' r='5' fill='%23333'/%3E%3Ccircle cx='160' cy='140' r='5' fill='%23333'/%3E%3Crect x='135' y='155' width='30' height='10' rx='5' fill='%23333'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EProtetor Tomada%3C/text%3E%3C/svg%3E"
+                ],
+                category: "safety",
+                asin: "B08XQVPQR8"
+            },
+            {
+                id: 7,
+                title: "Chupeta Ortodôntica Silicone 0-6 meses",
+                price: 19.90,
+                originalPrice: 29.90,
+                rating: 4.7,
+                reviews: 6250,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f8ff'/%3E%3Ccircle cx='150' cy='150' r='40' fill='%2387ceeb'/%3E%3Ccircle cx='150' cy='150' r='25' fill='%23fff'/%3E%3Crect x='145' y='190' width='10' height='20' rx='5' fill='%2387ceeb'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EChupeta%3C/text%3E%3C/svg%3E"
+                ],
+                category: "feeding",
+                asin: "B09CHUPETA1"
+            },
+            {
+                id: 8,
+                title: "Fralda Pampers Premium Care RN",
+                price: 49.90,
+                originalPrice: 69.90,
+                rating: 4.8,
+                reviews: 15420,
+                images: [
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f5f5dc'/%3E%3Crect x='100' y='120' width='100' height='60' rx='30' fill='%23fff' stroke='%23dda0dd'/%3E%3Ctext x='150' y='145' text-anchor='middle' font-family='Arial' font-size='12' fill='%23666'%3EPampers%3C/text%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EFralda Premium%3C/text%3E%3C/svg%3E"
+                ],
+                category: "care",
+                asin: "B07FRALDA01"
+            }
+        ];
 
-<script>
-// Simulação de API com preços dinâmicos
-const produtos = {
-  fraldas: [
-    {nome:"Fralda Pampers Confort Sec XXG 60und", img:"https://m.media-amazon.com/images/I/71A6nCfPRvL._AC_SX425_.jpg", preco:78.90, link:"https://www.amazon.com.br/dp/B07DNWRNCH?tag=alfalink-20"},
-    {nome:"Fralda Huggies Supreme Care Mega 48und", img:"https://m.media-amazon.com/images/I/919yevGPrXL._AC_SX425_.jpg", preco:69.99, link:"https://www.amazon.com.br/dp/B08L68PDYL?tag=alfalink-20"}
-  ],
-  higiene: [
-    {nome:"Lenço Umedecido Johnson's Baby 96und", img:"https://m.media-amazon.com/images/I/61hM8dxwGLL._AC_SX425_.jpg", preco:18.50, link:"https://www.amazon.com.br/dp/B08FPLVJSF?tag=alfalink-20"},
-    {nome:"Bepantol Baby Creme Assaduras 60g", img:"https://m.media-amazon.com/images/I/61t9aBRcWjL._AC_SX425_.jpg", preco:19.25, link:"https://www.amazon.com.br/dp/B06XGJDF3X?tag=alfalink-20"}
-  ],
-  acessorios: [
-    {nome:"Kit Mamadeira Philips Avent Classic+ 3und", img:"https://m.media-amazon.com/images/I/71Qn2vQ3anL._AC_SY450_.jpg", preco:109.00, link:"https://www.amazon.com.br/dp/B01B1E6EG4?tag=alfalink-20"},
-    {nome:"Chupeta MAM Perfect Night 6m+", img:"https://m.media-amazon.com/images/I/61t6suHxuTL._AC_SY445_.jpg", preco:39.50, link:"https://www.amazon.com.br/dp/B07MZKNM4B?tag=alfalink-20"}
-  ],
-  roupinhas: [
-    {nome:"Conjunto Body Carter's 3 peças", img:"https://m.media-amazon.com/images/I/71idw-i0pFL._AC_SY550_.jpg", preco:124.90, link:"https://www.amazon.com.br/dp/B08MVXYM1F?tag=alfalink-20"},
-    {nome:"Macacão Soft Plush Bebê Menino", img:"https://m.media-amazon.com/images/I/61QF71OP7fL._AC_SY500_.jpg", preco:79.90, link:"https://www.amazon.com.br/dp/B09KBDW7RK?tag=alfalink-20"}
-  ],
-  brinquedos: [
-    {nome:"Kit Brinquedos Educativos Montessori", img:"https://m.media-amazon.com/images/I/71oBrkMnJcL._AC_SX425_.jpg", preco:149.90, link:"https://www.amazon.com.br/dp/B08LVC7R6K?tag=alfalink-20"},
-    {nome:"Pelúcia Musical Fisher Price", img:"https://m.media-amazon.com/images/I/81IVQNkQgtL._AC_SX425_.jpg", preco:89.90, link:"https://www.amazon.com.br/dp/B07NQCX7DD?tag=alfalink-20"}
-  ],
-  material: [
-    {nome:"Estojo Escolar Duplo Menina", img:"https://m.media-amazon.com/images/I/81V7gE3VLqL._AC_SX425_.jpg", preco:39.90, link:"https://www.amazon.com.br/dp/B08KQZVW56?tag=alfalink-20"},
-    {nome:"Kit Volta às Aulas Caderno + Lápis", img:"https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SX425_.jpg", preco:49.90, link:"https://www.amazon.com.br/dp/B01MXXQKGM?tag=alfalink-20"}
-  ]
-};
+        let currentSlide = 0;
+        let filteredProducts = [...products];
+        let displayedProducts = 8;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let currentImageIndex = {};
 
-function renderProdutos(lista, idContainer) {
-  const div = document.getElementById(idContainer);
-  div.innerHTML = lista.map(p=>`
-    <div class="card">
-      <img src="${p.img}" alt="${p.nome}" loading="lazy">
-      <div class="product-title">${p.nome}</div>
-      <div class="price">R$ ${parseFloat(p.preco).toFixed(2)}</div>
-      <a class="btn" target="_blank" rel="nofollow" href="${p.link}">Ver na Amazon</a>
-    </div>
-  `).join('');
-}
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCarousel();
+            loadProductsGrid();
+            animateStats();
+            setupIntersectionObserver();
+            setupTouchSupport();
+            setupLazyLoading();
+        });
 
-// Render inicial
-Object.keys(produtos).forEach(key=>renderProdutos(produtos[key],`produtos-${key}`));
+        // Setup touch support for carousel
+        function setupTouchSupport() {
+            const carousel = document.getElementById('carouselContainer');
+            
+            carousel.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            carousel.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevSlide();
+            }
+        }
 
-// Atualização automática de preços 
-setInterval(()=>{
-  Object.values(produtos).forEach(lista=>{
-    lista.forEach(p=>{
-      p.preco = (p.preco * (0.95 + Math.random()*0.1)).toFixed(2);
-    });
-  });
-  Object.keys(produtos).forEach(key=>renderProdutos(produtos[key],`produtos-${key}`));
-},60000);
-</script>
+        // Setup lazy loading
+        function setupLazyLoading() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('skeleton');
+                        img.classList.add('fade-in');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
 
-</body>
+        // Create confetti effect
+        function createConfetti(x, y) {
+            const colors = ['#ff9bb5', '#87ceeb', '#ff9a9e', '#b6e5ff', '#ffc0cb'];
+            
+            for (let i = 0; i < 15; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = x + 'px';
+                confetti.style.top = y + 'px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+
+        // Load carousel products
+        function loadCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.innerHTML = '';
+            
+            products.slice(0, 4).forEach(product => {
+                const slide = createCarouselSlide(product);
+                carousel.appendChild(slide);
+            });
+        }
+
+        // Create carousel slide with image gallery
+        function createCarouselSlide(product) {
+            const slide = document.createElement('div');
+            slide.className = 'min-w-full md:min-w-1/2 lg:min-w-1/3 xl:min-w-1/4 px-4';
+            
+            const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+            const images = product.images || [product.image];
+            currentImageIndex[product.id] = 0;
+            
+            slide.innerHTML = `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover relative">
+                    <div class="floating-badge absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                        -${discount}%
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <button onclick="toggleHeart(this)" class="bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="image-gallery image-zoom relative mb-4">
+                            <img src="${images[0]}" alt="${product.title}" class="w-full h-48 object-cover rounded-lg">
+                            ${images.length > 1 ? `
+                                <div class="gallery-dots">
+                                    ${images.map((_, index) => `
+                                        <div class="gallery-dot ${index === 0 ? 'active' : ''}" onclick="changeImage(${product.id}, ${index})"></div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 line-clamp-2">${product.title}</h4>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 mr-2">
+                                ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5-Math.floor(product.rating))}
+                            </div>
+                            <span class="text-sm text-gray-600">(${product.reviews.toLocaleString()})</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">R$ ${product.price.toFixed(2)}</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">R$ ${product.originalPrice.toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <button onclick="buyProduct('${product.asin}', event)" class="ripple w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg transition-all transform hover:scale-105 pulse-animation shadow-lg">
+                            🛒 Comprar para o Bebê
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return slide;
+        }
+
+        // Change image in gallery
+        function changeImage(productId, imageIndex) {
+            const product = products.find(p => p.id === productId);
+            if (!product || !product.images) return;
+            
+            currentImageIndex[productId] = imageIndex;
+            
+            // Update image in all instances
+            document.querySelectorAll(`[data-product-id="${productId}"] img`).forEach(img => {
+                img.src = product.images[imageIndex];
+                img.classList.add('micro-bounce');
+                setTimeout(() => img.classList.remove('micro-bounce'), 600);
+            });
+            
+            // Update dots
+            document.querySelectorAll(`[data-product-id="${productId}"] .gallery-dot`).forEach((dot, index) => {
+                dot.classList.toggle('active', index === imageIndex);
+            });
+        }
+
+        // Toggle heart animation
+        function toggleHeart(button) {
+            const icon = button.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                icon.classList.add('heart-animation');
+                button.classList.add('micro-bounce');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                icon.classList.remove('heart-animation');
+            }
+            
+            setTimeout(() => {
+                icon.classList.remove('heart-animation');
+                button.classList.remove('micro-bounce');
+            }, 1000);
+        }
+
+        // Load products grid with skeleton loading
+        function loadProductsGrid() {
+            const grid = document.getElementById('productsGrid');
+            
+            // Show skeleton loading
+            grid.innerHTML = Array(8).fill().map(() => `
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="skeleton h-48"></div>
+                    <div class="p-4">
+                        <div class="skeleton h-4 mb-2"></div>
+                        <div class="skeleton h-4 mb-3 w-3/4"></div>
+                        <div class="skeleton h-6 mb-4 w-1/2"></div>
+                        <div class="skeleton h-10"></div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                grid.innerHTML = '';
+                const productsToShow = filteredProducts.slice(0, displayedProducts);
+                
+                productsToShow.forEach((product, index) => {
+                    setTimeout(() => {
+                        const card = createProductCard(product);
+                        card.classList.add('fade-in');
+                        grid.appendChild(card);
+                        
+                        // Trigger fade in animation
+                        setTimeout(() => card.classList.add('visible'), 50);
+                    }, index * 100);
+                });
+            }, 500);
+        }
+
+        // Create product card with enhanced features
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-xl shadow-lg overflow-hidden card-hover';
+            card.setAttribute('data-product-id', product.id);
+            
+            const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+            const images = product.images || [product.image];
+            
+            card.innerHTML = `
+                <div class="relative image-zoom">
+                    <img src="${images[0]}" alt="${product.title}" class="w-full h-48 object-cover">
+                    <div class="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold floating-badge">
+                        -${discount}%
+                    </div>
+                    <div class="absolute top-3 right-3">
+                        <button onclick="toggleHeart(this)" class="bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    ${images.length > 1 ? `
+                        <div class="gallery-dots">
+                            ${images.map((_, index) => `
+                                <div class="gallery-dot ${index === 0 ? 'active' : ''}" onclick="changeImage(${product.id}, ${index})"></div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+                <div class="p-4">
+                    <h4 class="font-semibold text-lg mb-2 line-clamp-2">${product.title}</h4>
+                    <div class="flex items-center mb-3">
+                        <div class="flex text-yellow-400 text-sm mr-2">
+                            ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5-Math.floor(product.rating))}
+                        </div>
+                        <span class="text-xs text-gray-600">${product.rating} (${product.reviews.toLocaleString()})</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-xl font-bold text-green-600">R$ ${product.price.toFixed(2)}</div>
+                        <div class="text-sm text-gray-500 line-through">R$ ${product.originalPrice.toFixed(2)}</div>
+                        <div class="text-sm text-green-600 font-semibold">Economize R$ ${(product.originalPrice - product.price).toFixed(2)}</div>
+                    </div>
+                    <button onclick="buyProduct('${product.asin}', event)" class="ripple w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-2 rounded-lg transition-all transform hover:scale-105 shadow-md">
+                        💝 Ver na Amazon
+                    </button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Enhanced buy product function with confetti
+        function buyProduct(asin, event) {
+            const amazonUrl = `https://www.amazon.com.br/dp/${asin}?tag=${AFFILIATE_TAG}`;
+            
+            // Create confetti at click position
+            if (event) {
+                createConfetti(event.clientX, event.clientY);
+                
+                // Add micro bounce to button
+                event.target.classList.add('micro-bounce');
+                setTimeout(() => event.target.classList.remove('micro-bounce'), 600);
+            }
+            
+            window.open(amazonUrl, '_blank');
+            
+            // Track conversion
+            console.log(`Product clicked: ${asin} with affiliate tag: ${AFFILIATE_TAG}`);
+        }
+
+        // Enhanced carousel navigation
+        function nextSlide() {
+            const carousel = document.getElementById('carousel');
+            const maxSlides = Math.max(0, products.length - 4);
+            currentSlide = currentSlide >= maxSlides ? 0 : currentSlide + 1;
+            carousel.style.transform = `translateX(-${currentSlide * (100 / Math.min(products.length, 4))}%)`;
+        }
+
+        function prevSlide() {
+            const carousel = document.getElementById('carousel');
+            const maxSlides = Math.max(0, products.length - 4);
+            currentSlide = currentSlide <= 0 ? maxSlides : currentSlide - 1;
+            carousel.style.transform = `translateX(-${currentSlide * (100 / Math.min(products.length, 4))}%)`;
+        }
+
+        // Auto-advance carousel with pause on hover
+        let carouselInterval = setInterval(nextSlide, 5000);
+        
+        document.getElementById('carouselContainer').addEventListener('mouseenter', () => {
+            clearInterval(carouselInterval);
+        });
+        
+        document.getElementById('carouselContainer').addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Enhanced filter products with visual feedback
+        function filterProducts(category) {
+            if (category === 'all') {
+                filteredProducts = [...products];
+            } else {
+                filteredProducts = products.filter(product => product.category === category);
+            }
+            displayedProducts = 8;
+            loadProductsGrid();
+            
+            // Enhanced visual feedback
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = '';
+            });
+            
+            if (event && event.target.closest('.category-card')) {
+                const clickedCard = event.target.closest('.category-card');
+                clickedCard.style.transform = 'scale(1.05)';
+                clickedCard.style.boxShadow = '0 15px 35px rgba(0, 151, 57, 0.4)';
+                clickedCard.classList.add('wiggle');
+                
+                setTimeout(() => {
+                    clickedCard.classList.remove('wiggle');
+                }, 500);
+            }
+        }
+
+        // Sort products
+        function sortProducts() {
+            const sortBy = document.getElementById('sortSelect').value;
+            
+            switch(sortBy) {
+                case 'price-low':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating':
+                    filteredProducts.sort((a, b) => b.rating - a.rating);
+                    break;
+                default:
+                    filteredProducts.sort((a, b) => b.reviews - a.reviews);
+            }
+            
+            loadProductsGrid();
+        }
+
+        // Load more products with animation
+        function loadMoreProducts() {
+            displayedProducts += 8;
+            loadProductsGrid();
+            
+            // Scroll to new products
+            setTimeout(() => {
+                const grid = document.getElementById('productsGrid');
+                const newProducts = grid.children;
+                if (newProducts.length > displayedProducts - 8) {
+                    newProducts[displayedProducts - 8].scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }
+            }, 1000);
+        }
+
+        // Animate statistics
+        function animateStats() {
+            const stats = [
+                { id: 'stat1', target: 10000, suffix: '+' },
+                { id: 'stat2', target: 50000, suffix: '+' },
+                { id: 'stat3', target: 500, suffix: '+' },
+                { id: 'stat4', target: 30, suffix: '%' }
+            ];
+            
+            stats.forEach(stat => {
+                animateNumber(stat.id, stat.target, stat.suffix);
+            });
+        }
+
+        function animateNumber(elementId, target, suffix = '') {
+            const element = document.getElementById(elementId);
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString() + suffix;
+            }, 20);
+        }
+
+        // Scroll to products
+        function scrollToProducts() {
+            document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Enhanced intersection observer
+        function setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Enhanced interactive features
+        document.addEventListener('mouseover', function(e) {
+            if (e.target.closest('.category-card')) {
+                const card = e.target.closest('.category-card');
+                card.style.transform = 'scale(1.05)';
+                card.style.transition = 'all 0.3s ease';
+            }
+        });
+
+        document.addEventListener('mouseout', function(e) {
+            if (e.target.closest('.category-card')) {
+                const card = e.target.closest('.category-card');
+                if (!card.classList.contains('active')) {
+                    card.style.transform = 'scale(1)';
+                }
+            }
+        });
+
+        // Performance optimization - debounced scroll
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                // Lazy load images that come into view
+                setupLazyLoading();
+            }, 100);
+        });
+
+        // Simulate real-time price updates with visual feedback
+        setInterval(() => {
+            const randomProduct = products[Math.floor(Math.random() * products.length)];
+            const priceChange = (Math.random() - 0.5) * 20;
+            randomProduct.price = Math.max(randomProduct.price + priceChange, randomProduct.originalPrice * 0.5);
+            
+            // Update display with animation
+            if (Math.random() < 0.2) { // 20% chance to refresh
+                const priceElements = document.querySelectorAll(`[data-product-id="${randomProduct.id}"] .text-green-600`);
+                priceElements.forEach(el => {
+                    el.classList.add('micro-bounce');
+                    setTimeout(() => el.classList.remove('micro-bounce'), 600);
+                });
+                
+                setTimeout(() => {
+                    loadProductsGrid();
+                }, 300);
+            }
+        }, 30000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ce7a65e3931a88',t:'MTc1NzUwMjYxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
