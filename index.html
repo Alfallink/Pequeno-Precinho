@@ -309,6 +309,50 @@
             0% { background-position: -200% 0; }
             100% { background-position: 200% 0; }
         }
+
+        /* About Section Styles */
+        .about-feature {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .about-feature:hover {
+            border-left-color: #ff9bb5;
+            transform: translateX(5px);
+        }
+        
+        .heart-pulse {
+            animation: heartPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Expandable Section */
+        .expandable-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .expandable-section.expanded {
+            max-height: 2000px;
+        }
+        
+        .expand-button {
+            transition: all 0.4s ease;
+        }
+        
+        .expand-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -378,8 +422,8 @@
                     </div>
                 </div>
                 <nav class="hidden md:flex space-x-6">
+                    <a href="#sobre" class="hover:text-yellow-200 transition-colors">Sobre Nós</a>
                     <a href="#produtos" class="hover:text-yellow-200 transition-colors">Produtos</a>
-                    <a href="#ofertas" class="hover:text-yellow-200 transition-colors">Ofertas</a>
                     <a href="#categorias" class="hover:text-yellow-200 transition-colors">Categorias</a>
                 </nav>
                 <div class="flex items-center space-x-2">
@@ -404,36 +448,125 @@
                 <button onclick="scrollToProducts()" class="ripple bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
                     🛍️ Ver Produtos <i class="fas fa-arrow-down ml-2"></i>
                 </button>
-                <button class="ripple border-2 border-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full font-semibold text-lg transition-all">
-                    🎁 Ofertas Especiais
+                <button onclick="toggleAboutSection()" class="ripple border-2 border-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full font-semibold text-lg transition-all expand-button">
+                    👶 Conheça a Gente
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-16 bg-white">
+    <!-- About Us Section (Collapsed by Default) -->
+    <section id="sobre" class="py-12 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="card-hover p-6 category-feeding rounded-2xl fade-in">
-                    <div class="text-5xl mb-3">👶</div>
-                    <div class="text-4xl font-bold text-white mb-2" id="stat1">0</div>
-                    <div class="text-white font-semibold">Produtos para Bebês</div>
+            <!-- Collapsed Preview -->
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Uma História de Amor pelos Pequenos</h3>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                    Somos uma família brasileira que entende a alegria e os desafios de cuidar de um bebê. 
+                    Nossa missão é ajudar outras famílias a encontrarem os melhores produtos com praticidade e confiança.
+                </p>
+                <button onclick="toggleAboutSection()" class="expand-button ripple bg-gradient-to-r from-pink-400 to-blue-400 hover:from-pink-500 hover:to-blue-500 text-white px-6 py-3 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center mx-auto">
+                    <span id="expandButtonText">Conheça Nossa História Completa</span>
+                    <i id="expandIcon" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                </button>
+            </div>
+            
+            <!-- Expandable Content -->
+            <div id="aboutContent" class="expandable-section">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-8">
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-br from-pink-50 to-blue-50 p-8 rounded-2xl card-hover">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="heart-pulse text-red-400 mr-3">💝</span>
+                                Quem Somos
+                            </h4>
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Somos uma família de coração brasileiro que entende perfeitamente a alegria e os desafios 
+                                de cuidar de um bebê. Nossa missão nasceu do desejo genuíno de ajudar outras famílias a 
+                                encontrarem os melhores produtos para seus pequenos, com a praticidade e confiança que 
+                                toda mamãe e papai merecem.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="about-feature bg-white p-6 rounded-xl shadow-md">
+                                <div class="text-3xl mb-3 text-pink-400">👶</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Seleção com Carinho</h5>
+                                <p class="text-gray-600 text-sm">Cada produto é testado e aprovado por nossa equipe de especialistas em cuidados infantis</p>
+                            </div>
+                            
+                            <div class="about-feature bg-white p-6 rounded-xl shadow-md">
+                                <div class="text-3xl mb-3 text-blue-400">🛡️</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Segurança em Primeiro Lugar</h5>
+                                <p class="text-gray-600 text-sm">Priorizamos produtos com certificações de qualidade e segurança internacional</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-pink-50 p-8 rounded-2xl card-hover">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="text-yellow-400 mr-3">⭐</span>
+                                Nossa Missão
+                            </h4>
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Queremos ser o parceiro de confiança das famílias brasileiras, oferecendo uma curadoria 
+                                especializada dos melhores produtos infantis da Amazon. Acreditamos que cada sorriso de 
+                                bebê vale ouro, e trabalhamos com amor para garantir que sua experiência de compra seja 
+                                tão especial quanto os momentos que você vive com seu pequeno.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="about-feature bg-white p-6 rounded-xl shadow-md">
+                                <div class="text-3xl mb-3 text-green-400">💰</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Preços Acessíveis</h5>
+                                <p class="text-gray-600 text-sm">Trabalhamos para garantir os melhores preços sem abrir mão da qualidade</p>
+                            </div>
+                            
+                            <div class="about-feature bg-white p-6 rounded-xl shadow-md">
+                                <div class="text-3xl mb-3 text-purple-400">🚚</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Entrega Rápida</h5>
+                                <p class="text-gray-600 text-sm">Produtos selecionados com entrega ágil em todo o Brasil através da Amazon</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-hover p-6 category-clothing rounded-2xl fade-in">
-                    <div class="text-5xl mb-3">👨‍👩‍👧‍👦</div>
-                    <div class="text-4xl font-bold text-white mb-2" id="stat2">0</div>
-                    <div class="text-white font-semibold">Famílias Brasileiras</div>
+                
+                <!-- Values Section -->
+                <div class="mt-16 text-center">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-8">Nossos Valores</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center p-6">
+                            <div class="text-5xl mb-4 heart-pulse">❤️</div>
+                            <h5 class="text-xl font-bold text-gray-800 mb-3">Amor em Primeiro Lugar</h5>
+                            <p class="text-gray-600">Cada recomendação é feita com o mesmo cuidado que teríamos com nossos próprios filhos</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="text-5xl mb-4 animate-bounce">🤝</div>
+                            <h5 class="text-xl font-bold text-gray-800 mb-3">Confiança e Transparência</h5>
+                            <p class="text-gray-600">Valorizamos a honestidade em cada indicação e mantemos você informado sobre cada produto</p>
+                        </div>
+                        
+                        <div class="text-center p-6">
+                            <div class="text-5xl mb-4 floating-badge">🌟</div>
+                            <h5 class="text-xl font-bold text-gray-800 mb-3">Excelência Sempre</h5>
+                            <p class="text-gray-600">Buscamos incessantemente os melhores produtos para surpreender positivamente sua família</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-hover p-6 category-toys rounded-2xl fade-in">
-                    <div class="text-5xl mb-3">🎁</div>
-                    <div class="text-4xl font-bold text-white mb-2" id="stat3">0</div>
-                    <div class="text-white font-semibold">Ofertas Especiais</div>
-                </div>
-                <div class="card-hover p-6 baby-gradient rounded-2xl fade-in">
-                    <div class="text-5xl mb-3">💝</div>
-                    <div class="text-4xl font-bold text-white mb-2" id="stat4">0</div>
-                    <div class="text-white font-semibold">Economia Média</div>
+                
+                <!-- CTA Section -->
+                <div class="mt-16 text-center bg-gradient-to-r from-pink-400 to-blue-400 rounded-2xl p-8 text-white">
+                    <h4 class="text-2xl font-bold mb-4">Junte-se à Nossa Família Bebê Brasil! 🎉</h4>
+                    <p class="text-lg mb-6 max-w-2xl mx-auto">
+                        Faça parte dessa comunidade de pais e mães que priorizam qualidade, segurança e muito amor 
+                        na escolha dos produtos para seus bebês
+                    </p>
+                    <button onclick="scrollToProducts()" class="ripple bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                        🛒 Começar a Comprar Agora
+                    </button>
                 </div>
             </div>
         </div>
@@ -548,7 +681,7 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-green-300 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#sobre" class="hover:text-green-300 transition-colors">Sobre Nós</a></li>
                         <li><a href="#" class="hover:text-green-300 transition-colors">Contato</a></li>
                         <li><a href="#" class="hover:text-green-300 transition-colors">Política de Privacidade</a></li>
                     </ul>
@@ -576,39 +709,87 @@
         </div>
     </footer>
 
+    <!-- JavaScript Separado -->
     <script>
+        // Caminhos das imagens separados
+        const imagePaths = {
+            // Produto 1 - Mamadeira MAM Anticólica
+            product1: [
+                "images/mamadeira-avent-1.jpg",
+                "images/mamadeira-avent-2.jpg"
+            ],
+            
+            // Produto 2 - Body Bebê Manga Longa
+            product2: [
+                "images/body-bebe-1.jpg",
+                "images/body-bebe-2.jpg"
+            ],
+            
+            // Produto 3 - Ursinho de Pelúcia Musical
+            product3: [
+                "images/ursinho-musical-1.jpg"
+            ],
+            
+            // Produto 4 - Shampoo Johnson's Baby
+            product4: [
+                "images/shampoo-johnson-1.jpg"
+            ],
+            
+            // Produto 5 - Berço Portátil com Mosquiteiro
+            product5: [
+                "images/berco-portatil-1.jpg"
+            ],
+            
+            // Produto 6 - Protetor de Tomada
+            product6: [
+                "images/protetor-tomada-1.jpg"
+            ],
+            
+            // Produto 7 - Chupeta Ortodôntica
+            product7: [
+                "images/chupeta-1.jpg"
+            ],
+            
+            // Produto 8 - Fralda Pampers
+            product8: [
+                "images/fralda-pampers-1.jpg"
+            ],
+            
+            // Imagens decorativas
+            decorative: {
+                teddyBear: "images/teddy-bear.png",
+                babyBottle: "images/baby-bottle.png",
+                balloon: "images/balloon.png",
+                star: "images/star.png"
+            }
+        };
+
         // Amazon Affiliate Tag
         const AFFILIATE_TAG = 'Alfalink-20';
         
-        // Sample baby products data with multiple images
+        // Sample baby products data com caminhos de imagem atualizados
         const products = [
             {
                 id: 1,
-                title: " MamadeiraMamadeira MAM Anticólica - Easy Start",
+                title: "Mamadeira MAM Anticólica - Easy Start",
                 price: 85.90,
                 originalPrice: 65.90,
                 rating: 4.8,
                 reviews: 8420,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23ffeef0'/%3E%3Crect x='130' y='80' width='40' height='140' rx='20' fill='%23fff' stroke='%23ff9bb5'/%3E%3Ccircle cx='150' cy='70' r='15' fill='%23ff9bb5'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EMamadeira Avent%3C/text%3E%3C/svg%3E",
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fff0f5'/%3E%3Crect x='130' y='80' width='40' height='140' rx='20' fill='%23ffb6c1' stroke='%23ff69b4'/%3E%3Ccircle cx='150' cy='70' r='15' fill='%23ff69b4'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EMamadeira Rosa%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product1,
                 category: "feeding",
-            asin:"B0882CRPZ9/?tag=alfalink-20"
-},
+                asin: "B0882CRPZ9"
+            },
             {
                 id: 2,
-                title: "Body Bebê Manga Longa Kit 5 Peças",
-                price: 89.90,
-                originalPrice: 129.90,
+                title: "Body Bebê e Calça Mijão Kit 10 Peças Manga Longa",
+                price: 138.60,
+                originalPrice: 145.90,
                 rating: 4.7,
-                reviews: 5930,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23e6f3ff'/%3E%3Crect x='110' y='100' width='80' height='100' rx='10' fill='%23a8d8ff'/%3E%3Ccircle cx='130' cy='120' r='5' fill='%23fff'/%3E%3Ccircle cx='170' cy='120' r='5' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EBody Bebê%3C/text%3E%3C/svg%3E",
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23ffe6f0'/%3E%3Crect x='110' y='100' width='80' height='100' rx='10' fill='%23ffb6c1'/%3E%3Ccircle cx='130' cy='120' r='5' fill='%23fff'/%3E%3Ccircle cx='170' cy='120' r='5' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EBody Rosa%3C/text%3E%3C/svg%3E"
-                ],
+                reviews: 365,
+                images: imagePaths.product2,
                 category: "clothing",
-                asin: "B08MQZXN2Y"
+                asin: "B084C91NSD/?tag=alfalink-20"
             },
             {
                 id: 3,
@@ -617,9 +798,7 @@
                 originalPrice: 179.90,
                 rating: 4.9,
                 reviews: 12450,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fff5e6'/%3E%3Ccircle cx='150' cy='140' r='50' fill='%23d4a574'/%3E%3Ccircle cx='135' cy='125' r='8' fill='%23333'/%3E%3Ccircle cx='165' cy='125' r='8' fill='%23333'/%3E%3Ccircle cx='150' cy='145' r='5' fill='%23333'/%3E%3Ccircle cx='120' cy='110' r='15' fill='%23d4a574'/%3E%3Ccircle cx='180' cy='110' r='15' fill='%23d4a574'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EUrsinho Musical%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product3,
                 category: "toys",
                 asin: "B08KTZ8250"
             },
@@ -630,9 +809,7 @@
                 originalPrice: 24.90,
                 rating: 4.6,
                 reviews: 7670,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0fff0'/%3E%3Crect x='120' y='80' width='60' height='120' rx='10' fill='%23a8e6a8'/%3E%3Crect x='125' y='85' width='50' height='20' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EShampoo Johnson%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product4,
                 category: "care",
                 asin: "B0BDHWDR13"
             },
@@ -643,9 +820,7 @@
                 originalPrice: 399.90,
                 rating: 4.5,
                 reviews: 3240,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fff0f5'/%3E%3Crect x='80' y='140' width='140' height='80' rx='10' fill='%23ffb6c1' stroke='%23ff69b4'/%3E%3Crect x='90' y='150' width='120' height='60' fill='%23fff'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EBerço Portátil%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product5,
                 category: "furniture",
                 asin: "B07QBQZPX5"
             },
@@ -656,9 +831,7 @@
                 originalPrice: 39.90,
                 rating: 4.4,
                 reviews: 4180,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fffacd'/%3E%3Crect x='120' y='120' width='60' height='60' rx='10' fill='%23ffd700'/%3E%3Ccircle cx='140' cy='140' r='5' fill='%23333'/%3E%3Ccircle cx='160' cy='140' r='5' fill='%23333'/%3E%3Crect x='135' y='155' width='30' height='10' rx='5' fill='%23333'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EProtetor Tomada%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product6,
                 category: "safety",
                 asin: "B08XQVPQR8"
             },
@@ -669,9 +842,7 @@
                 originalPrice: 29.90,
                 rating: 4.7,
                 reviews: 6250,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f8ff'/%3E%3Ccircle cx='150' cy='150' r='40' fill='%2387ceeb'/%3E%3Ccircle cx='150' cy='150' r='25' fill='%23fff'/%3E%3Crect x='145' y='190' width='10' height='20' rx='5' fill='%2387ceeb'/%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EChupeta%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product7,
                 category: "feeding",
                 asin: "B09CHUPETA1"
             },
@@ -682,9 +853,7 @@
                 originalPrice: 69.90,
                 rating: 4.8,
                 reviews: 15420,
-                images: [
-                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f5f5dc'/%3E%3Crect x='100' y='120' width='100' height='60' rx='30' fill='%23fff' stroke='%23dda0dd'/%3E%3Ctext x='150' y='145' text-anchor='middle' font-family='Arial' font-size='12' fill='%23666'%3EPampers%3C/text%3E%3Ctext x='150' y='250' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EFralda Premium%3C/text%3E%3C/svg%3E"
-                ],
+                images: imagePaths.product8,
                 category: "care",
                 asin: "B07GQB93FT"
             }
@@ -696,16 +865,43 @@
         let touchStartX = 0;
         let touchEndX = 0;
         let currentImageIndex = {};
+        let aboutExpanded = false;
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             loadCarousel();
             loadProductsGrid();
-            animateStats();
             setupIntersectionObserver();
             setupTouchSupport();
             setupLazyLoading();
         });
+
+        // Toggle About Section
+        function toggleAboutSection() {
+            const aboutContent = document.getElementById('aboutContent');
+            const expandIcon = document.getElementById('expandIcon');
+            const expandButtonText = document.getElementById('expandButtonText');
+            
+            aboutExpanded = !aboutExpanded;
+            
+            if (aboutExpanded) {
+                aboutContent.classList.add('expanded');
+                expandIcon.classList.add('rotate-180');
+                expandButtonText.textContent = 'Fechar Nossa História';
+                
+                // Scroll to about section if it's not in view
+                setTimeout(() => {
+                    document.getElementById('sobre').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 300);
+            } else {
+                aboutContent.classList.remove('expanded');
+                expandIcon.classList.remove('rotate-180');
+                expandButtonText.textContent = 'Conheça Nossa História Completa';
+            }
+        }
 
         // Setup touch support for carousel
         function setupTouchSupport() {
@@ -1070,34 +1266,6 @@
             }, 1000);
         }
 
-        // Animate statistics
-        function animateStats() {
-            const stats = [
-                { id: 'stat1', target: 10000, suffix: '+' },
-                { id: 'stat2', target: 50000, suffix: '+' },
-                { id: 'stat3', target: 500, suffix: '+' },
-                { id: 'stat4', target: 30, suffix: '%' }
-            ];
-            
-            stats.forEach(stat => {
-                animateNumber(stat.id, stat.target, stat.suffix);
-            });
-        }
-
-        function animateNumber(elementId, target, suffix = '') {
-            const element = document.getElementById(elementId);
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current).toLocaleString() + suffix;
-            }, 20);
-        }
-
         // Scroll to products
         function scrollToProducts() {
             document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
@@ -1169,5 +1337,5 @@
             }
         }, 30000);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d04255b3c964c3',t:'MTc1NzUyMTI5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
